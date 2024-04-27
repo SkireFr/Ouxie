@@ -1,3 +1,4 @@
+--new
 local ui = {}
 
 function ui:load(config)
@@ -978,12 +979,11 @@ function ui:load(config)
 		local coverFile = configFolder.."/"..order[1].title.."_".."Cover.png"
 		local trackFile = configFolder.."/"..order[1].title.."_".."Track.mp4"
 		if G2L["4d"]["SoundId"] == "0" then
+            G2L["3b"]["Image"] = getsynasset(coverFile);
 			G2L["4d"]["SoundId"] = getsynasset(trackFile);
-			G2L["3b"]["Image"] = getsynasset(coverFile)
+            G2L["4d"]["TimePosition"] = 0;
 			G2L["1c"]["Text"] = order[1].title;
 			G2L["1e"]["Text"] = order[1].artists;
-			G2L["1"].TRACKSOUND.TimePosition = 0
-			G2L["1"].TRACKSOUND.SoundId = getsynasset(trackFile)
 		end
 		set_track(order[1].title, coverFile, order[1].artists, trackFile, true)
 	end
