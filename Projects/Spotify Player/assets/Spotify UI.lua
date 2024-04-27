@@ -1,4 +1,4 @@
---new 1
+--new 2
 local ui = {}
 
 function ui:load(config)
@@ -980,6 +980,7 @@ function ui:load(config)
 		local trackFile = configFolder.."/"..order[1].title.."_".."Track.mp4"
 		if G2L["4d"]["SoundId"] == "0" and getcustomasset(trackFile) ~= nil then
             G2L["3b"]["Image"] = getcustomasset(coverFile);
+            print("983")
 			G2L["4d"]["SoundId"] = getcustomasset(trackFile);
             G2L["4d"]["TimePosition"] = 0;
 			G2L["1c"]["Text"] = order[1].title;
