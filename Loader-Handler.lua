@@ -1,5 +1,4 @@
--- loader
-
+-- loader v2
 local ouxie = {
     ["required-functions"] = {
         [1] = getsynasset;
@@ -12,8 +11,7 @@ local ouxie = {
     ["projects"] = {
         ["developer-console"] = {
             ["version"] = 1.2;
-            ["source"] = "loadstring(game:HttpGet(\"https://source-raw\"))()";
-            ["params"] = "/raw/YZr1dBG3";
+            ["source"] = "Developer Console";
         }
     };
     ["supported"] = {
@@ -27,7 +25,7 @@ local ouxie = {
         ["Creator"] = "Skire";
     };
     ["using"] = "github";
-    ["base"] = "https://github.com/Skirefr/Ouxie";
+    ["base"] = "https://raw.githubusercontent.com/SkireFr/Ouxie/main";
     ["executor"] = identifyexecutor();
 }
 
@@ -40,8 +38,15 @@ function ouxie:load(script)
     local function get(script, type)
         if type == "game" then
             if ouxie.using == "github" then
-                local src = string.gsub(ouxie.base.."OuxieHub/Games/"..ouxie.games[script]," ","%%20")
-                print(src)
+                local src = string.gsub(ouxie.base.."/Games/"..ouxie.games[script]..".lua"," ","%%20");game:HttpGet(src)
+                loadstring(game:HttpGet(src))()
+            else
+                warn("lol no.")
+            end
+        elseif type == "project" then
+            if ouxie.using == "github" then
+                local src = string.gsub(ouxie.base.."/Projects/"..ouxie.projects[script].source..".lua"," ","%%20");game:HttpGet(src)
+                loadstring(game:HttpGet(src))()
             else
                 warn("lol no.")
             end
