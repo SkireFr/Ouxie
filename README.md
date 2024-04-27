@@ -5,10 +5,11 @@ Open sourced script hub / projects
 version 1.2
 
 ## Game Loader:
+replace "_PROJECTNAME_" with the project name
 ```luau
-loadstr
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireFr/Ouxie/main/Loader-Handler.lua"))():load(_PROJECTNAME_)
 ```
 ## Project Loader:
 ```luau
-loadstr
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireFr/Ouxie/main/Loader-Handler.lua"))():load(game.PlaceId)
 ```
