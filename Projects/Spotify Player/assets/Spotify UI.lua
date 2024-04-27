@@ -749,7 +749,7 @@ function ui:load(config)
 		if loading then
 			local old_id
 			if keep == false then
-				G2L["3b"]["Image"] = "rbxassetid://"..cover
+				G2L["3b"]["Image"] = getsynasset(cover)
 				G2L["1c"]["Text"] = title;
 				G2L["1e"]["Text"] = art;
 				G2L["1"].TRACKSOUND.TimePosition = 0
