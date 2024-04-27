@@ -1,4 +1,4 @@
---new 2
+--new 1
 local ui = {}
 
 function ui:load(config)
@@ -613,7 +613,7 @@ function ui:load(config)
 		local script = G2L["28"];
 		script.Parent.Button.MouseButton1Down:Connect(function()
 			script.Parent.Bar.Size = UDim2.new(math.clamp((game.Players.LocalPlayer:GetMouse().X - script.Parent.AbsolutePosition.X)/script.Parent.AbsoluteSize.X,0,1),0,1,0)
-			G2L["1"].TRACKSOUND.TimePosition = math.floor(script.Parent.Bar.Size.X.Scale * G2L["1"].TRACKSOUND.TimeLength)
+			G2L["4d"].TimePosition = math.floor(script.Parent.Bar.Size.X.Scale * G2L["4d"].TimeLength)
 		end)
 		script.Parent.MouseEnter:Connect(function()
 			script.Parent.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
@@ -624,7 +624,7 @@ function ui:load(config)
 			script.Parent.Bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		end)
 		while true do
-			local progress = G2L["1"].TRACKSOUND.TimePosition / G2L["1"].TRACKSOUND.TimeLength
+			local progress = G2L["4d"].TimePosition / G2L["4d"].TimeLength
 			script.Parent.Bar.Size = UDim2.new(progress, 0, 1, 0)
 			wait()
 		end
@@ -669,8 +669,8 @@ function ui:load(config)
 		script.Parent.Button.MouseButton1Up:Connect(leave)
 		script.Parent.Button.MouseButton1Click:Connect(function()
 			enter()
-			G2L["1"].TRACKSOUND.Playing = not G2L["1"].TRACKSOUND.Playing
-			if G2L["1"].TRACKSOUND.Playing then
+			G2L["4d"].Playing = not G2L["4d"].Playing
+			if G2L["4d"].Playing then
 				script.Parent.Icon.Image = "rbxassetid://7072719997"
 			else
 				script.Parent.Icon.Image = "rbxassetid://7072720676"
@@ -678,13 +678,13 @@ function ui:load(config)
 			task.wait(0.2)
 			leave()
 		end)
-		G2L["1"].TRACKSOUND.DidLoop:Connect(function()
-			G2L["1"].TRACKSOUND:Pause()
-			G2L["1"].TRACKSOUND.TimePosition = 0
+		G2L["4d"].DidLoop:Connect(function()
+			G2L["4d"]:Pause()
+			G2L["4d"].TimePosition = 0
 			script.Parent.Icon.Image = "rbxassetid://7072720676"
 		end)
-		G2L["1"].TRACKSOUND.Played:Connect(function()
-			G2L["1"].TRACKSOUND.TimePosition = 0
+		G2L["4d"].Played:Connect(function()
+			G2L["4d"].TimePosition = 0
 			script.Parent.Icon.Image = "rbxassetid://7072719997"
 		end)
 	end;
@@ -753,15 +753,15 @@ function ui:load(config)
 				G2L["3b"]["Image"] = getcustomasset(cover)
 				G2L["1c"]["Text"] = title;
 				G2L["1e"]["Text"] = art;
-				G2L["1"].TRACKSOUND.TimePosition = 0
-				G2L["1"].TRACKSOUND.SoundId = getcustomasset(track)
+				G2L["4d"].TimePosition = 0
+				G2L["4d"].SoundId = getcustomasset(track)
 			end
 		else
 			G2L["3b"]["Image"] =  getcustomasset(cover)
 			G2L["1c"]["Text"] = title;
 			G2L["1e"]["Text"] = art;
-			G2L["1"].TRACKSOUND.TimePosition = 0
-			G2L["1"].TRACKSOUND.SoundId = getcustomasset(track)
+			G2L["4d"].TimePosition = 0
+			G2L["4d"].SoundId = getcustomasset(track)
 		end
 	end
 	local function next_track()
@@ -778,7 +778,7 @@ function ui:load(config)
 		local coverFile = configFolder.."/"..nextTrack.title.."_".."Cover.png"
 		local trackFile = configFolder.."/"..nextTrack.title.."_".."Track.mp4"
 		set_track(nextTrack.title, coverFile, nextTrack.artists, trackFile, false)
-		G2L["1"].TRACKSOUND:Play()
+		G2L["4d"]:Play()
 		return nextTrack
 	end
 	local function previous_track()
@@ -795,7 +795,7 @@ function ui:load(config)
 		local coverFile = configFolder.."/"..prevTrack.title.."_".."Cover.png"
 		local trackFile = configFolder.."/"..prevTrack.title.."_".."Track.mp4"
 		set_track(prevTrack.title, coverFile, prevTrack.artists, trackFile, false)
-		G2L["1"].TRACKSOUND:Play()
+		G2L["4d"]:Play()
 		return prevTrack
 	end
 	local function add_playist(title, cover, artist, track)
@@ -956,7 +956,7 @@ function ui:load(config)
 	end
 	G2L["39"].MouseButton1Click:Connect(next_track)
 	G2L["2f"].MouseButton1Click:Connect(previous_track)
-	G2L["1"].TRACKSOUND.DidLoop:Connect(function()
+	G2L["4d"].DidLoop:Connect(function()
 		wait(0.2)
 		next_track()
 	end)
