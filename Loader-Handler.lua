@@ -1,4 +1,5 @@
--- loader v2
+-- ouxie loader v2
+-- in testing so coding might look bad (dont mind) (no bully)
 local ouxie = {
     ["required-functions"] = {
         [1] = getsynasset;
