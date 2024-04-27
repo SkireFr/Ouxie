@@ -506,6 +506,7 @@ function output:load(config)
             local code = script.Parent.cmdr.cmd.Box.Text
             print(">", script.Parent.cmdr.cmd.Box.Text)
             executecode(code)
+            code = ""
         end
         
         script.Parent.cmdr.cmd.Box.FocusLost:Connect(runcmd)
