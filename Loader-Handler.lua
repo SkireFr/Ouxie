@@ -63,7 +63,14 @@ function ouxie:load(script, config)
             print("Unsupported (game) // Invalid (project)")
         end
     else
-        warn("You cant spoof your executor like dat fr (not gunna load)")
+        warn("You cant spoof your executor like dat fr (might have errors)")
+        if ouxie.games[script] then
+            get(script, "game")
+        elseif ouxie.projects[script] then
+            get(script, "project")
+        else
+            print("Unsupported (game) // Invalid (project)")
+        end
     end
 end
 
