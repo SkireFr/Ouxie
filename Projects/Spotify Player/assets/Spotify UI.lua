@@ -753,14 +753,14 @@ function ui:load(config)
 				G2L["1c"]["Text"] = title;
 				G2L["1e"]["Text"] = art;
 				G2L["1"].TRACKSOUND.TimePosition = 0
-				G2L["1"].TRACKSOUND.SoundId = "rbxassetid://"..track
+				G2L["1"].TRACKSOUND.SoundId = getsynasset(track)
 			end
 		else
-			G2L["3b"]["Image"] =  "rbxassetid://"..cover
+			G2L["3b"]["Image"] =  getsynasset(cover)
 			G2L["1c"]["Text"] = title;
 			G2L["1e"]["Text"] = art;
 			G2L["1"].TRACKSOUND.TimePosition = 0
-			G2L["1"].TRACKSOUND.SoundId = "rbxassetid://"..track
+			G2L["1"].TRACKSOUND.SoundId = getsynasset(track)
 		end
 	end
 	local function next_track()
@@ -950,7 +950,7 @@ function ui:load(config)
 		end)
 
 		-- set getsynasset
-		G2L["10"]["Image"] = "rbxassetid://"..cover
+		G2L["10"]["Image"] = getsynasset(cover)
 
 	end
 	G2L["39"].MouseButton1Click:Connect(next_track)
@@ -961,7 +961,7 @@ function ui:load(config)
 	end)
 
 	writefile(config.file.."/Logo.png", game:HttpGet("https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png"))
-	G2L["4b"]["Image"] = "rbxassetid://"..config.file.."/Logo.png"
+	G2L["4b"]["Image"] = getsynasset(config.file).."/Logo.png"
 	local order = {}
 	for i,v in pairs(config.Tracks) do
 		local configFolder = config.file.."/"..i.."_".."Config"
@@ -978,12 +978,12 @@ function ui:load(config)
 		local coverFile = configFolder.."/"..order[1].title.."_".."Cover.png"
 		local trackFile = configFolder.."/"..order[1].title.."_".."Track.mp4"
 		if G2L["4d"]["SoundId"] == "0" then
-			G2L["4d"]["SoundId"] = "rbxassetid://"..trackFile
-			G2L["3b"]["Image"] = "rbxassetid://"..coverFile
+			G2L["4d"]["SoundId"] = getsynasset(trackFile);
+			G2L["3b"]["Image"] = getsynasset(coverFile)
 			G2L["1c"]["Text"] = order[1].title;
 			G2L["1e"]["Text"] = order[1].artists;
 			G2L["1"].TRACKSOUND.TimePosition = 0
-			G2L["1"].TRACKSOUND.SoundId = "rbxassetid://"..trackFile
+			G2L["1"].TRACKSOUND.SoundId = getsynasset(trackFile)
 		end
 		set_track(order[1].title, coverFile, order[1].artists, trackFile, true)
 	end
