@@ -4,12 +4,12 @@ by skire
 Open sourced script hub / projects
 version 1.2
 
-## Game Loader:
+## Project Loader:
 replace "_PROJECTNAME_" with the project name
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireFr/Ouxie/main/Loader-Handler.lua"))():load(_PROJECTNAME_)
 ```
-## Project Loader:
+## Game Loader:
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireFr/Ouxie/main/Loader-Handler.lua"))():load(game.PlaceId)
 ```
