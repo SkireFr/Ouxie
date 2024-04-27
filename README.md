@@ -13,3 +13,13 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireFr/Ouxie/main/Lo
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireFr/Ouxie/main/Loader-Handler.lua"))():load(game.PlaceId)
 ```
+
+## Supported Executors (or recommended):
+some functions in ouxie are exclusive to some exectors, heres a list of some:
+| executor | success |
+| ------ | ------ |
+| Arceus X | 100% / true |
+| Evon | 90-80% / ig |
+| Krampus | 80-70% / maybe some (executecode is nil) |
+| Codex | 50-40% / crappy fr (missing alot of functions) |
+| Others | idk dm if it works on your exploit (list the script) |
