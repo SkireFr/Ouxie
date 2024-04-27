@@ -14,6 +14,10 @@ local ouxie = {
         ["developer-console"] = {
             ["version"] = 1.2;
             ["source"] = "Developer Console";
+        };
+        ["spotify-player"] = {
+            ["version"] = 1.3;
+            ["source"] = "Spotify Player";
         }
     };
     ["supported"] = {
