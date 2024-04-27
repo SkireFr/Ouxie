@@ -2,7 +2,6 @@
 # OUXIE HUB
 by skire
 Open sourced script hub / projects
-
 version 1.2
 
 ## Project Loader:
@@ -16,11 +15,25 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireFr/Ouxie/main/Lo
 ```
 
 ## Supported Executors (or recommended):
-some functions in ouxie are exclusive to some exectors, heres a list of some:
+some functions in ouxie are exclusive to some executers, heres a list of some:
 | executor | success |
 | ------ | ------ |
 | Arceus X | 100% / true |
-| Evon | 90-80% / i think |
+| Evon | 90-80% / ig |
 | Krampus | 80-70% / maybe some (executecode is nil) |
 | Codex | 50-40% / crappy fr (missing alot of functions) |
 | Others | idk dm if it works on your exploit (list the script) |
+
+## Requied Functions
+some functions are nil for some executers, heres a list of some:
+| function name | (args: type): returns |
+| ------ | ------ |
+| getsynasset | getsynasset(asset: string): string |
+| identifyexecutor | identifyexecutor(): string |
+| executecode | executecode(code: string): string |
+
+## execute this code to see if you will be supported:
+(unc tester)
+```lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/main/UNCCheckEnv.lua"))()
+```
