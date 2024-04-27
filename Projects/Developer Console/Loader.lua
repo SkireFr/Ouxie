@@ -505,7 +505,7 @@ function output:load(config)
         local function runcmd()
             local code = script.Parent.cmdr.cmd.Box.Text
             print(">", script.Parent.cmdr.cmd.Box.Text)
-            loadstring(code)
+            runcode(code)
         end
         
         script.Parent.cmdr.cmd.Box.FocusLost:Connect(runcmd)
@@ -517,5 +517,7 @@ function output:load(config)
 
     return G2L["1"], require;
 end
+
+
 
 return output
