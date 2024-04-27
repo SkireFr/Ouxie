@@ -27,7 +27,7 @@ local ouxie = {
         ["Creator"] = "Skire";
     };
     ["using"] = "github";
-    ["base"] = "https://github.com/SkireScripts/Ouxie";
+    ["base"] = "https://github.com/Skirefr/Ouxie";
     ["executor"] = identifyexecutor();
 }
 
