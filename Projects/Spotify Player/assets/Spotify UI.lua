@@ -1,4 +1,4 @@
---new 1
+--new 2
 local ui = {}
 
 function ui:load(config)
@@ -750,18 +750,18 @@ function ui:load(config)
 		if loading then
 			local old_id
 			if keep == false then
-				G2L["3b"]["Image"] = getsynasset(cover)
+				G2L["3b"]["Image"] = getcustomasset(cover)
 				G2L["1c"]["Text"] = title;
 				G2L["1e"]["Text"] = art;
 				G2L["1"].TRACKSOUND.TimePosition = 0
-				G2L["1"].TRACKSOUND.SoundId = getsynasset(track)
+				G2L["1"].TRACKSOUND.SoundId = getcustomasset(track)
 			end
 		else
-			G2L["3b"]["Image"] =  getsynasset(cover)
+			G2L["3b"]["Image"] =  getcustomasset(cover)
 			G2L["1c"]["Text"] = title;
 			G2L["1e"]["Text"] = art;
 			G2L["1"].TRACKSOUND.TimePosition = 0
-			G2L["1"].TRACKSOUND.SoundId = getsynasset(track)
+			G2L["1"].TRACKSOUND.SoundId = getcustomasset(track)
 		end
 	end
 	local function next_track()
@@ -950,8 +950,8 @@ function ui:load(config)
 			leave()
 		end)
 
-		-- set getsynasset
-		G2L["10"]["Image"] = getsynasset(cover)
+		-- set getcustomasset
+		G2L["10"]["Image"] = getcustomasset(cover)
 
 	end
 	G2L["39"].MouseButton1Click:Connect(next_track)
@@ -962,7 +962,7 @@ function ui:load(config)
 	end)
 
 	writefile(config.file.."/Logo.png", game:HttpGet("https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png"))
-	G2L["4b"]["Image"] = getsynasset(config.file).."/Logo.png"
+	G2L["4b"]["Image"] = getcustomasset(config.file).."/Logo.png"
 	local order = {}
 	for i,v in pairs(config.Tracks) do
 		local configFolder = config.file.."/"..i.."_".."Config"
@@ -978,9 +978,9 @@ function ui:load(config)
 		local configFolder = config.file.."/"..order[1].title.."_".."Config"
 		local coverFile = configFolder.."/"..order[1].title.."_".."Cover.png"
 		local trackFile = configFolder.."/"..order[1].title.."_".."Track.mp4"
-		if G2L["4d"]["SoundId"] == "0" and getsynasset(trackFile) ~= nil then
-            G2L["3b"]["Image"] = getsynasset(coverFile);
-			G2L["4d"]["SoundId"] = getsynasset(trackFile);
+		if G2L["4d"]["SoundId"] == "0" and getcustomasset(trackFile) ~= nil then
+            G2L["3b"]["Image"] = getcustomasset(coverFile);
+			G2L["4d"]["SoundId"] = getcustomasset(trackFile);
             G2L["4d"]["TimePosition"] = 0;
 			G2L["1c"]["Text"] = order[1].title;
 			G2L["1e"]["Text"] = order[1].artists;
