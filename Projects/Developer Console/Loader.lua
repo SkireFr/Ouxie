@@ -1,11 +1,15 @@
 local output = {}
 
 function output:load(config)
-    -- Instances: 41 | Scripts: 6 | Modules: 0
+    
+    if game:GetService("CoreGui"):FindFirstChild("Output") ~= nil then
+        game:GetService("CoreGui").Output:Destroy()
+    end
+
     local G2L = {};
 
     -- StarterGui.Output
-    G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+    G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
     G2L["1"]["IgnoreGuiInset"] = true;
     G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
     G2L["1"]["Name"] = [[Output]];
@@ -506,7 +510,7 @@ function output:load(config)
             local code = script.Parent.cmdr.cmd.Box.Text
             print(">", script.Parent.cmdr.cmd.Box.Text)
             executecode(code)
-            code = ""
+            script.Parent.cmdr.cmd.Box.Text = "" or "Run a command"
         end
         
         script.Parent.cmdr.cmd.Box.FocusLost:Connect(runcmd)
