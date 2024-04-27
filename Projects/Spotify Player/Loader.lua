@@ -50,7 +50,7 @@ function data:load(config)
             end
             print("Finished getting data, downloading... (could take up to 20s)")
             if isfolder(t.."_Spotify") then else makefolder(t.."_Spotify") end
-            loadstring(game:HttpGet("https://pastebin.com/raw/tv2uP9d2"))():load({
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireFr/Ouxie/main/Projects/Spotify%20Player/assets/Spotify%20UI.lua"))():load({
                 Scale = 1,
                 Version = "1.0.0",
                 Tick = t,
@@ -88,7 +88,7 @@ function data:load(config)
                 }
                 print("Finished getting data, downloading... (wait a sec)")
                 if isfolder(t.."_Spotify") then else makefolder(t.."_Spotify") end
-                loadstring(game:HttpGet("https://pastebin.com/raw/tv2uP9d2"))():load({
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireFr/Ouxie/main/Projects/Spotify%20Player/assets/Spotify%20UI.lua"))():load({
                     Scale = 1,
                     Version = "1.0.0",
                     Tick = t,
