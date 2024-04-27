@@ -1,4 +1,4 @@
---new
+--new 1
 local ui = {}
 
 function ui:load(config)
@@ -978,7 +978,7 @@ function ui:load(config)
 		local configFolder = config.file.."/"..order[1].title.."_".."Config"
 		local coverFile = configFolder.."/"..order[1].title.."_".."Cover.png"
 		local trackFile = configFolder.."/"..order[1].title.."_".."Track.mp4"
-		if G2L["4d"]["SoundId"] == "0" then
+		if G2L["4d"]["SoundId"] == "0" and getsynasset(trackFile) ~= nil then
             G2L["3b"]["Image"] = getsynasset(coverFile);
 			G2L["4d"]["SoundId"] = getsynasset(trackFile);
             G2L["4d"]["TimePosition"] = 0;
