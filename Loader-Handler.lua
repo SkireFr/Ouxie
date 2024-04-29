@@ -45,7 +45,7 @@ function ouxie:load(script, config)
         if type == "game" then
             if ouxie.using == "github" then
                 local src = string.gsub(ouxie.base.."/Games/"..ouxie.games[script].."/Loader.lua"," ","%%20");
-                loadstring(game:HttpGet(src))()
+                return loadstring(game:HttpGet(src))()
             else
                 warn("lol no.")
             end
