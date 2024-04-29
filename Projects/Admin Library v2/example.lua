@@ -1,4 +1,4 @@
-local admin = loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireFr/Ouxie/main/Loader-Handler.lua"))():load("admin-library",{
+local admin = loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireFr/Ouxie/main/Projects/Admin%20Library%20v2/Loader.lua"))():load({
     name = "cool admin"; --> admin name
 	prefix = ";"; --> admin prefix
 	key = Enum.KeyCode.Semicolon; --> prefix KeyCode (required) | (https://create.roblox.com/docs/reference/engine/enums/KeyCode)
