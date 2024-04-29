@@ -15,7 +15,6 @@ local TN = game:GetService("TweenService")
 local cmdr = script.Parent.cmdr
 local terminal = script.Parent.windows.terminal
 local cmds = script.Parent.windows.commands
-local Players = game:GetService("Players")
 
 function main:load(config)
     local admin = {
